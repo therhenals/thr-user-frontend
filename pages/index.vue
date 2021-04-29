@@ -30,8 +30,8 @@
             </v-list>
           </v-card-text>
           <v-card-actions>
-            <v-btn text color="teal accent-4" :to="localePath(`/${user.id}`)">
-              Post
+            <v-btn color="teal accent-4" :to="`/${user.id}`">
+              Posts
             </v-btn>
           </v-card-actions>
         </v-card>
