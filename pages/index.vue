@@ -1,7 +1,7 @@
 <template>
   <div class="HomePage">
     <v-row>
-      <v-col v-for="user in users" :key="user._id" cols="12" sm="4">
+      <v-col v-for="user in users" :key="user.id" cols="12" sm="4">
         <v-card>
           <v-card-title>
             {{ user.name }}
@@ -11,9 +11,7 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Email</v-list-item-title>
-                  <v-list-item-subtitle>{{
-                    user.email
-                  }}</v-list-item-subtitle>
+                  <v-list-item-subtitle>{{ user.email }}</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
 
@@ -31,6 +29,11 @@
               <v-divider></v-divider>
             </v-list>
           </v-card-text>
+          <v-card-actions>
+            <v-btn text color="teal accent-4" :to="localePath(`/${user.id}`)">
+              Post
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
